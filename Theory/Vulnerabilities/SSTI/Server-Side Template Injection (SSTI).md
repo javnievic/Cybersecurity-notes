@@ -58,7 +58,7 @@ Este ejemplo intentaría ejecutar el comando `ls` en el servidor y mostrar el re
 
 Cómo detectarlo? [GitHub - vladko312/SSTImap: Automatic SSTI detection tool with interactive interface](https://github.com/vladko312/SSTImap)
 
-![[Capturas/Pasted image 20250115005412.png]]
+![](Screenshots/Pasted%20image%2020250115005412.png)
 
 
 Payloads: [PayloadsAllTheThings/Server Side Template Injection/README.md at master · swisskyrepo/PayloadsAllTheThings · GitHub](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/README.md)

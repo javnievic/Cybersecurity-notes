@@ -1,11 +1,15 @@
 How many TCP ports are open?
+
 ![](Screenshots/Pasted%20image%2020250113194956.png)
+
 There are 3 open ports
 
 ![](Screenshots/Pasted%20image%2020250113195509.png)
 
 Are you able to get to other users' scans?
+
 ![](Screenshots/Pasted%20image%2020250113200658.png)
+
 yes
 
 What is the ID of the PCAP file that contains sensative data?
@@ -24,8 +28,8 @@ Privilege escalation through binaries:
 `bash linpeas.sh`
 
 ![](Screenshots/Pasted%20image%2020250114011735.png)
-![[Screenshots/Pasted image 20250114011606.png]]
+![](Screenshots/Pasted%20image%2020250114011606.png)
 
 We escalate privileges taking advantage of python3.8 capabilities that has the setiud
-![[Screenshots/Pasted image 20250114012408.png]]
+![](Screenshots/Pasted%20image%2020250114012408.png)
 ![](Screenshots/Pasted%20image%2020250114013155.png)

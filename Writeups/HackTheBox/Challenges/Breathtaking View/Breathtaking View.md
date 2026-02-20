@@ -1,10 +1,13 @@
 Tags: `SSTI`, `Spring Boot`, `Pentesting`, `HTB`
 
 I opened with vs code the app: 
+
 ![](Screenshots/Pasted%20image%2020250115115245.png)
 ## Code review
 Inspecting the code I realized that the flag redirection is strange: 
-![](Screenshots/Pasted%20image%2020250115142751.png))We can manipulate the redirection of "lang +'/index' " to have access to the flag.txt
+![](Screenshots/Pasted%20image%2020250115142751.png)
+
+We can manipulate the redirection of "lang +'/index' " to have access to the flag.txt
 
 We can see that the controller takes the `lang` parameter and appends `/index` to it to resolve a view. The dangerous part here is the concatenation of the `lang` parameter, which can be exploited for Server-Side Template Injection (SSTI).
 
@@ -13,6 +16,7 @@ We can see that the controller takes the `lang` parameter and appends `/index` t
 To exploit the SSTI vulnerability, I tried injecting a simple template expression to check if the server evaluates it. First I tried with a raw injection "${7*7}", but it didn't  work: 
 
 ![](Screenshots/Pasted%20image%2020250115164826.png)
+
 I tried to encode the url ([[../../../../Theory/Vulnerabilities/SSTI/URL encoding]]): 
 ![](Screenshots/Pasted%20image%2020250115171853.png)
 
@@ -23,7 +27,7 @@ If I try to execute a java command it's impossible due to a java validation: `94
 ![](Screenshots/Pasted%20image%2020250115172901.png)
 
 I obfuscate a command that use java, but returns a process, not a string, __${(1).class.forName('ja' + 'va.lang.Runt' + 'ime').getRuntime().exec('whoami').}__::.x -> 
-![[Screenshots/Pasted image 20250115180348.png]]
+![](Screenshots/Pasted%20image%2020250115180348.png)
 I try some commands to do a reverse shell [GitHub - welk1n/ReverseShell-Java: Generating payloads to reverse shell in different contexts of java.](https://github.com/welk1n/ReverseShell-Java): 
 
 [Breathtaking View - Hack The Box | Pentest Everything](https://retherszu.github.io/ctf/hack-the-box/challenges/web/breathtaking-view.html#breathtaking-view)

@@ -22,5 +22,6 @@ In main.js there is a method fetchOptions(): const fetchOptions = () => {
 ![](Screenshots/Pasted%20image%2020250114171734.png)
 We have to write the combination: "HEAD NORTH", "FOLLOW A MYSTERIOUS PATH", "SET UP CAMP" and "Blip-blop, in a pickle with a hiccup! Shmiggity-shmack"
 
-And we have the flag captured: ![[Screenshots/Pasted image 20250114171828.png]]
+And we have the flag captured:
+![](Screenshots/Pasted%20image%2020250114171828.png)
 HTB{D3v3l0p3r_t00l5_4r3_b35t__t0015_wh4t_d0_y0u_Th1nk??}

